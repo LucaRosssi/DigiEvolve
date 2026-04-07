@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiEvolve</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/select-styles.css">
+</head>
+<body>
+    <section class="menu-container">
+        <div class="digimon-item" id="currentDigimond">
+            <p>Digimon Actual</p>
+            <div class="select">
+                <div class="custom-select">
+                    <div>
+                        <span class="value">Elige un Digimon</span>
+                    </div>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="option">
+                    <ul class="custom-option">
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Agumon.png" alt="Agumon">
+                            <span>Agumon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Airdramon.png" alt="Airdramon">
+                            <span>Airdramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Andromon.png" alt="Andromon">
+                            <span>Andromon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Angemon.png" alt="Angemon">
+                            <span>Angemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Bakemon.png" alt="Bakemon">
+                            <span>Bakemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Betamon.png" alt="Betamon">
+                            <span>Betamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Birdramon.png" alt="Birdramon">
+                            <span>Birdramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Biyomon.png" alt="Biyomon">
+                            <span>Biyomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Botamon.png" alt="Botamon">
+                            <span>Botamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Centarumon.png" alt="Centarumon">
+                            <span>Centarumon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Coelamon.png" alt="Coelamon">
+                            <span>Coelamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Devimon.png" alt="Devimon">
+                            <span>Devimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Digitamamon.png" alt="Digitamamon">
+                            <span>Digitamamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Drimogemon.png" alt="Drimogemon">
+                            <span>Drimogemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Elecmon.png" alt="Elecmon">
+                            <span>Elecmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Etemon.png" alt="Etemon">
+                            <span>Etemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Frigimon.png" alt="Frigimon">
+                            <span>Frigimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Gabumon.png" alt="Gabumon">
+                            <span>Gabumon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Garurumon.png" alt="Garurumon">
+                            <span>Garurumon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Giromon.png" alt="Giromon">
+                            <span>Giromon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Greymon.png" alt="Greymon">
+                            <span>Greymon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/H-Kabuterimon.png" alt="H-Kabuterimon">
+                            <span>H-Kabuterimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Kabuterimon.png" alt="Kabuterimon">
+                            <span>Kabuterimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Kokatorimon.png" alt="Kokatorimon">
+                            <span>Kokatorimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Koromon.png" alt="Koromon">
+                            <span>Koromon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Kunemon.png" alt="Kunemon">
+                            <span>Kunemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Kuwagamon.png" alt="Kuwagamon">
+                            <span>Kuwagamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Leomon.png" alt="Leomon">
+                            <span>Leomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Mamemon.png" alt="Mamemon">
+                            <span>Mamemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Megadramon.png" alt="Megadramon">
+                            <span>Megadramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/MegaSeadramon.png" alt="MegaSeadramon">
+                            <span>MegaSeadramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Meramon.png" alt="Meramon">
+                            <span>Meramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/MetalGreymon.png" alt="MetalGreymon">
+                            <span>MetalGreymon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/MetalMamemon.png" alt="MetalMamemon">
+                            <span>MetalMamemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Mojyamon.png" alt="Mojyamon">
+                            <span>Mojyamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Monochromon.png" alt="Monochromon">
+                            <span>Monochromon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Monzaemon.png" alt="Monzaemon">
+                            <span>Monzaemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Nanimon.png" alt="Nanimon">
+                            <span>Nanimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Ninjamon.png" alt="Ninjamon">
+                            <span>Ninjamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Numemon.png" alt="Numemon">
+                            <span>Numemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Ogremon.png" alt="Ogremon">
+                            <span>Ogremon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Palmon.png" alt="Palmon">
+                            <span>Palmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Patamon.png" alt="Patamon">
+                            <span>Patamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Penguinmon.png" alt="Penguinmon">
+                            <span>Penguinmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Phoenixmon.png" alt="Phoenixmon">
+                            <span>Phoenixmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Piximon.png" alt="Piximon">
+                            <span>Piximon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Poyomon.png" alt="Poyomon">
+                            <span>Poyomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Punimon.png" alt="Punimon">
+                            <span>Punimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Seadramon.png" alt="Seadramon">
+                            <span>Seadramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Shellmon.png" alt="Shellmon">
+                            <span>Shellmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/SkullGreymon.png" alt="SkullGreymon">
+                            <span>SkullGreymon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Sukamon.png" alt="Sukamon">
+                            <span>Sukamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Tanemon.png" alt="Tanemon">
+                            <span>Tanemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Tokomon.png" alt="Tokomon">
+                            <span>Tokomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Tsunomon.png" alt="Tsunomon">
+                            <span>Tsunomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Tyrannomon.png" alt="Tyrannomon">
+                            <span>Tyrannomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Unimon.png" alt="Unimon">
+                            <span>Unimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Vademon.png" alt="Vademon">
+                            <span>Vademon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Vegiemon.png" alt="Vegiemon">
+                            <span>Vegiemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Whamon.png" alt="Whamon">
+                            <span>Whamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Yuramon.png" alt="Yuramon">
+                            <span>Yuramon</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="digimon-item" id="wantedDigimond">
+            <p>Digimon Deseado</p>
+            <div class="select">
+                <div class="custom-select">
+                    <div>
+                        <span class="value">Elige un Digimon</span>
+                    </div>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="option">
+                    <ul class="custom-option">
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Agumon.png" alt="Agumon">
+                            <span>Agumon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Airdramon.png" alt="Airdramon">
+                            <span>Airdramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Andromon.png" alt="Andromon">
+                            <span>Andromon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Angemon.png" alt="Angemon">
+                            <span>Angemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Bakemon.png" alt="Bakemon">
+                            <span>Bakemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Betamon.png" alt="Betamon">
+                            <span>Betamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Birdramon.png" alt="Birdramon">
+                            <span>Birdramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Biyomon.png" alt="Biyomon">
+                            <span>Biyomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Botamon.png" alt="Botamon">
+                            <span>Botamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Centarumon.png" alt="Centarumon">
+                            <span>Centarumon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Coelamon.png" alt="Coelamon">
+                            <span>Coelamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Devimon.png" alt="Devimon">
+                            <span>Devimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Digitamamon.png" alt="Digitamamon">
+                            <span>Digitamamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Drimogemon.png" alt="Drimogemon">
+                            <span>Drimogemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Elecmon.png" alt="Elecmon">
+                            <span>Elecmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Etemon.png" alt="Etemon">
+                            <span>Etemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Frigimon.png" alt="Frigimon">
+                            <span>Frigimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Gabumon.png" alt="Gabumon">
+                            <span>Gabumon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Garurumon.png" alt="Garurumon">
+                            <span>Garurumon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Giromon.png" alt="Giromon">
+                            <span>Giromon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Greymon.png" alt="Greymon">
+                            <span>Greymon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/H-Kabuterimon.png" alt="H-Kabuterimon">
+                            <span>H-Kabuterimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Kabuterimon.png" alt="Kabuterimon">
+                            <span>Kabuterimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Kokatorimon.png" alt="Kokatorimon">
+                            <span>Kokatorimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Koromon.png" alt="Koromon">
+                            <span>Koromon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Kunemon.png" alt="Kunemon">
+                            <span>Kunemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Kuwagamon.png" alt="Kuwagamon">
+                            <span>Kuwagamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Leomon.png" alt="Leomon">
+                            <span>Leomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Mamemon.png" alt="Mamemon">
+                            <span>Mamemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Megadramon.png" alt="Megadramon">
+                            <span>Megadramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/MegaSeadramon.png" alt="MegaSeadramon">
+                            <span>MegaSeadramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Meramon.png" alt="Meramon">
+                            <span>Meramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/MetalGreymon.png" alt="MetalGreymon">
+                            <span>MetalGreymon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/MetalMamemon.png" alt="MetalMamemon">
+                            <span>MetalMamemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Mojyamon.png" alt="Mojyamon">
+                            <span>Mojyamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Monochromon.png" alt="Monochromon">
+                            <span>Monochromon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Monzaemon.png" alt="Monzaemon">
+                            <span>Monzaemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Nanimon.png" alt="Nanimon">
+                            <span>Nanimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Ninjamon.png" alt="Ninjamon">
+                            <span>Ninjamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Numemon.png" alt="Numemon">
+                            <span>Numemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Ogremon.png" alt="Ogremon">
+                            <span>Ogremon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Palmon.png" alt="Palmon">
+                            <span>Palmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Patamon.png" alt="Patamon">
+                            <span>Patamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Penguinmon.png" alt="Penguinmon">
+                            <span>Penguinmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Phoenixmon.png" alt="Phoenixmon">
+                            <span>Phoenixmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Piximon.png" alt="Piximon">
+                            <span>Piximon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Poyomon.png" alt="Poyomon">
+                            <span>Poyomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Punimon.png" alt="Punimon">
+                            <span>Punimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Seadramon.png" alt="Seadramon">
+                            <span>Seadramon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Shellmon.png" alt="Shellmon">
+                            <span>Shellmon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/SkullGreymon.png" alt="SkullGreymon">
+                            <span>SkullGreymon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Sukamon.png" alt="Sukamon">
+                            <span>Sukamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Tanemon.png" alt="Tanemon">
+                            <span>Tanemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Tokomon.png" alt="Tokomon">
+                            <span>Tokomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Tsunomon.png" alt="Tsunomon">
+                            <span>Tsunomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Tyrannomon.png" alt="Tyrannomon">
+                            <span>Tyrannomon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Unimon.png" alt="Unimon">
+                            <span>Unimon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Vademon.png" alt="Vademon">
+                            <span>Vademon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Vegiemon.png" alt="Vegiemon">
+                            <span>Vegiemon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Whamon.png" alt="Whamon">
+                            <span>Whamon</span>
+                        </li>
+                        <li>
+                            <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/Yuramon.png" alt="Yuramon">
+                            <span>Yuramon</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="digimon-field" id="digimonConteiner">
+        
+    </section>
+    <footer>
+
+    </footer>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>
