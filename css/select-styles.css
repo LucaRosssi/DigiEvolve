@@ -4,11 +4,13 @@
     --primary-color: #293840;
     --secontdary-color: #82eefe;
     --third-color: #313183;
-    --border: 2px solid #D0D0D0;
-    --grey: #333;
-    --light-grey: #f0f0f0;
-    --purple: #6a0dad;
     --guide-font: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--guide-font);
+    background: linear-gradient(135deg, #293840, #4f9ca8, #82eefe);
+    color: var(--primary-text-color);
 }
 
 li {
@@ -30,6 +32,15 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.custom-select img {
+    width: 1em;
+    height: 1em;
+}
+
+.bx {
+    cursor: pointer;
 }
 
 .custom-select span {
@@ -80,4 +91,8 @@ li {
 .custom-option li:hover {
     background-color: var(--third-color);
     color: var(--secontdary-color);
+}
+
+.hide {
+    display: none;  
 }
