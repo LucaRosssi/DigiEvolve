@@ -93,6 +93,16 @@ li {
     color: var(--secontdary-color);
 }
 
+.no-evolution {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30% 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
 .hide {
     display: none;  
 }
