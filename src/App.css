@@ -1,0 +1,22 @@
+:root {
+    --primary-text-color: #e1e6e8;
+    --placeholder-color: #a2a8ab;
+    --primary-color: #293840;
+    --secontdary-color: #82eefe;
+    --third-color: #313183;
+    --guide-font: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: var(--guide-font);
+    background: linear-gradient(135deg, #293840, #4f9ca8, #82eefe);
+    color: var(--primary-text-color);
+    background-attachment: fixed;
+}
