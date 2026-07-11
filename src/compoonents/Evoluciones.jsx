@@ -1,111 +1,76 @@
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import "../css/evoluciones.css"
-import { getDigimon, getEvoluciones } from "./CustomHooks";
 import { useDigimon } from "../context/DigimonContext";
-import SkeletonIcon from "./SkeletonIcon";
 
 const Evoluciones = ({digimon}) => {
-  const [ lineaEvolutiva, setLineaEvolutiva ] = useState([]);
-  const [ preEvoluciones, setPreEvoluciones ] = useState([])
-  const { evolucion, loader } = getEvoluciones();
-  const { products } = getDigimon();
-  const { setSelectedDigimon2 } = useDigimon();
+  const { setSelectedDigimon2, products, evolucion, setSelectedDigimon } = useDigimon();
 
-    useEffect(() => {
-      setLineaEvolutiva([]);
-      if (digimon && evolucion.length > 0 && products.length > 0) {
-        const evoDoc = evolucion.find(d => d.nombre === digimon.nombre);
 
-        if (evoDoc?.evoluciones) {
-          // Filtrar los digimon completos que coincidan con los nombres en evoDoc.evoluciones
-          console.log(evoDoc.evoluciones)
-          const evolutionsData = products.filter(p =>
-            evoDoc.evoluciones.includes(p.nombre)
-          );
-          setLineaEvolutiva(evolutionsData)
-        }
-      }
+    const lineaEvolutiva = useMemo(() => {
+      if (!digimon || !evolucion.length || !products.length) return [];
+      const evoDoc = evolucion.find(d => d.nombre === digimon.nombre);
+      return evoDoc?.evoluciones ? products.filter(p => evoDoc.evoluciones.includes(p.nombre)) : [];
     }, [digimon, evolucion, products]);
 
-    useEffect(() => {
-      setPreEvoluciones([]);
-      if (digimon && evolucion.length > 0 && products.length > 0) {
-        const evoDoc = evolucion.find(d => d.nombre === digimon.nombre);
-
-        if (evoDoc?.prevo) {
-          // Filtrar los digimon completos que coincidan con los nombres en evoDoc.evoluciones
-          console.log(evoDoc.prevo)
-          const evolutionsData = products.filter(p =>
-            evoDoc.prevo.includes(p.nombre)
-          );
-          setPreEvoluciones(evolutionsData)
-        }
-      }
+    const preEvoluciones = useMemo(() => {
+      if (!digimon || !evolucion.length || !products.length) return [];
+      const evoDoc = evolucion.find(d => d.nombre === digimon.nombre);
+      return evoDoc?.prevo ? products.filter(p => evoDoc.prevo.includes(p.nombre)) : [];
     }, [digimon, evolucion, products]);
 
     const cambio  = (evo) => {
       setSelectedDigimon2(evo)
-      console.log(setSelectedDigimon2)
+      setSelectedDigimon(null)
     }
-
+    
   return (
     <>
         <h2>Linea Evolutiva</h2>
         <div className="evolve-container">
           <div>
             <h3 style={{textAlign: 'center'}}>Pre-Evoluciones</h3>
-            <div className="evolve-third-line evolve-column" 
-                  onClick={cambio()}>
-              { loader ? (
-                Array.from({ length: 6 }, (_, index) => (
-                    <SkeletonIcon key={index} />
-                ))
-              ) : (
+            <div className="evolve-third-line evolve-column">
+              {
                 preEvoluciones.map((evo) => (
-                  <img
-                    key={evo.id}
-                    src={evo.icon}
-                    alt={evo.nombre}
-                    title={evo.nombre}
-                    className="evolve"
-                    onClick={() => cambio(evo)}
-                  />
+                  <button className='button' key={evo.id} onClick={() => cambio(evo)}>
+                    <img
+                      src={evo.icon}
+                      alt={evo.nombre}
+                      title={evo.nombre}
+                      className="evolve"
+                    />
+                  </button>
                 ))
-              )
               }
             </div>
           </div>
           <div >
             <h3>Digimon</h3>
             <div className=" evolve-column center">
-              { loader ? (
-                <SkeletonIcon/>
-              ) : (
-                <img key={digimon.id} src={digimon.icon} alt={digimon.nombre} title={digimon.nombre} className="evolve" onClick={() => cambio(digimon)}/>
-              )
-              }
-              
+                  <button className='button' key={digimon.id}>
+                    <img
+                      src={digimon.icon}
+                      alt={digimon.nombre}
+                      title={digimon.nombre}
+                      className="evolve"
+                    />
+                  </button>
             </div>
           </div>
           <div>
             <h3>Evoluciones</h3>
             <div className="evolve-third-line evolve-column">
-              { loader ? (
-                Array.from({ length: 6 }, (_, index) => (
-                    <SkeletonIcon key={index} />
-                ))
-              ) : (
+              {
                 lineaEvolutiva.map((evo) => (
-                  <img
-                    key={evo.id}
-                    src={evo.icon}
-                    alt={evo.nombre}
-                    title={evo.nombre}
-                    className="evolve"
-                    onClick={() => cambio(evo)}
-                  />
+                  <button className='button' key={evo.id} onClick={() => cambio(evo)}>
+                    <img
+                      src={evo.icon}
+                      alt={evo.nombre}
+                      title={evo.nombre}
+                      className="evolve"
+                    />
+                  </button>
                 ))
-              )
               }
               
             </div>

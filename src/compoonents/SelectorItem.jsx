@@ -1,10 +1,6 @@
-import { useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 const SelectorItem = ({digimon, onSelect}) => {
-  useEffect(()=> {
-          console.log(digimon)
-      }, [digimon])
   return (
     <>
         {digimon.map((products) => (

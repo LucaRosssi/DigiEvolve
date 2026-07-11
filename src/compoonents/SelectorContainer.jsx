@@ -1,45 +1,29 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import Selector from './Selector'
 import { useDigimon } from '../context/DigimonContext'
-import { collection, getDocs } from 'firebase/firestore'
-import { db } from '../sevice/firebase'
-import { getEvoluciones } from './CustomHooks'
 
 const SelectorContainer = () => {
-  const { products, loader, error, selectedDigimon, setSelectedDigimon, selectedEvolution, setSelectedEvolution, selectedDigimon2, setSelectedDigimon2 } = useDigimon()
-  const [filteredEvolutions, setFilteredEvolutions] = useState([])
-  const { evolucion } = getEvoluciones();
+  const { products, productsLoading, error, selectedDigimon, setSelectedDigimon, selectedDigimon2, setSelectedDigimon2, evolucion } = useDigimon()
 
-  useEffect(() => {
-    setSelectedEvolution([]);
-    setFilteredEvolutions([]);
-
-    if (selectedDigimon?.nombre && evolucion.length > 0) {
-      const evoDoc = evolucion.find(d => d.nombre === selectedDigimon.nombre);
-
-      if (evoDoc?.evoluciones && evoDoc.evoluciones.length > 0) {
-        setSelectedEvolution(evoDoc.evoluciones); 
-      }
-    }
+  const selectedEvolution = useMemo(() => {
+    if (!selectedDigimon?.nombre || evolucion.length === 0) return [];
+    const evoDoc = evolucion.find(d => d.nombre === selectedDigimon.nombre);
+    return evoDoc?.evoluciones?.length > 0 ? evoDoc.evoluciones : [];
   }, [selectedDigimon, evolucion]);
 
   // filtrar la colección completa para obtener los objetos de las evoluciones
-  useEffect(() => {
-    if (selectedEvolution.length > 0 && products.length > 0) {
-      const evolutionsData = products.filter(d =>
-        selectedEvolution.includes(d.nombre)
-      );
-      setFilteredEvolutions(evolutionsData);
-    } else {
-      setFilteredEvolutions(null);
-    }
+  const filteredEvolutions = useMemo(() => {
+    if (selectedEvolution.length === 0 || products.length === 0) return [];
+    return products.filter(d => selectedEvolution.includes(d.nombre));
   }, [selectedEvolution, products]);
-
+  
   const clearSelector2 = () => {
     setSelectedDigimon2(null)
   };
 
   
+  // Obtener los digimon especiales
+
     const digimonEspeciales = {
         nanimon: 'Nanimon', 
         numemon: 'Numemon',
@@ -55,10 +39,6 @@ const SelectorContainer = () => {
         return products.filter(product => field.includes(product.nombre));
     }, [products]);
 
-    useEffect(()=> {
-        console.log(filteredDigimon)
-    }, [filteredDigimon]);
-
   return (
     <div style={{
       display: 'flex',
@@ -71,7 +51,7 @@ const SelectorContainer = () => {
       {/* Selector 1: lista completa */}
       <Selector
         products={products}
-        loader={loader}
+        loader={productsLoading}
         error={error}
         digimon={selectedDigimon}
         setDigimon={setSelectedDigimon}
@@ -83,7 +63,7 @@ const SelectorContainer = () => {
       {/* Selector 2: evoluciones filtradas */}
       <Selector
         products={selectedDigimon ? filteredEvolutions : filteredDigimon}
-        loader={loader}
+        loader={productsLoading}
         error={error}
         digimon={selectedDigimon2}
         setDigimon={setSelectedDigimon2}

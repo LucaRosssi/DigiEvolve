@@ -2,15 +2,13 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../sevice/firebase';
 
-export const getDigimon = () => {
+export const useDigimonesData = () => {
     const [products, setProducts] = useState([]);
-    const [loader, setLoader]= useState(false);
+    const [loader, setLoader]= useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
       let isMounted = true;
-      setLoader(true)
-      setError(null);
         const prodCollection = collection(db, "digimon") //Indica con que coleccion vamos a trabajar
         getDocs(prodCollection)
         .then((res)=>{
@@ -41,26 +39,32 @@ export const getDigimon = () => {
     return {products, loader, error};
 }
 
-export const getEvoluciones = () => {
+export const useEvolucionesData = () => {
     const [evolucion, setEvolucion] = useState([]);
-    const [loader, setLoader]= useState(false);
+    const [loader, setLoader]= useState(true);
   
     useEffect(() => {
-      setLoader(true)
+      let isMounted = true;
       const fetchEvolutions = async () => {
         try {
           const evolve = collection(db, "digimonEvolve")
           const res = await getDocs(evolve)
+          if (!isMounted) return;
           const list = res.docs.map(doc => ({ id: doc.id, ...doc.data() }))
           setEvolucion(list)
         } catch (err) {
           console.error(err)
         }
         finally {
+          if (!isMounted) return;
           setLoader(false)
         }
       }
       fetchEvolutions()
+      
+      return () => {
+        isMounted = false;
+      };
     }, []);
 
     return { evolucion, loader };

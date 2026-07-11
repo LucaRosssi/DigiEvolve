@@ -20,6 +20,12 @@
     height: 1.2em;
 }
 
+.skeleton-cover {
+  height: 496px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
 .skeleton-icon {
     width: 30px;
     height: 30px;

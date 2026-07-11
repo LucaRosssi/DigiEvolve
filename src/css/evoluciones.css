@@ -19,7 +19,7 @@
     grid-template-rows: repeat(3, auto);
 }
 
-.evolve-third-line:has(:only-child) {
+.evolve-third-line:has(> :only-child) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +40,8 @@
     width: 30px;
 }
 
+
+.icon-button:hover .evolve,
 .evolve:hover {
     cursor: pointer;
     background-color: #bebebe;
@@ -61,6 +63,12 @@
 
 h3 {
     justify-self: center;
+}
+
+.button {
+    all: unset;
+    cursor: pointer;
+    display: contents;
 }
 
 @media only screen and (max-width: 650px) {

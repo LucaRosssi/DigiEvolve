@@ -1,27 +1,25 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
 import { IoIosArrowDropdown } from "react-icons/io";
 import "../css/selector.css"
 import SelectorItem from './SelectorItem';
-import { DigimonProvider } from '../context/DigimonContext';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../sevice/firebase';
 import Skeleton from './Skeleton';
 
 
-const Selector = ({ products = [], loader, error, digimon, setDigimon, type, setSelectedDigimon2, clear, text, especial }) => {
+const Selector = ({ products = [], loader, error, digimon, setDigimon, type, clear, text, especial }) => {
     const [open, setOpen] = useState(false);
     const [order, setOrder] = useState([]);
-    const [loading, setLoader]= useState(false)
-    const [Error, setError] = useState(null);
 
+    // Ordenar los productos por nombre cuando se actualiza la lista de productos
     useEffect(() => {
         if (products !== null && products.length > 0) {
             const sortedDigimon = [...products].sort((a, b) =>
                 a.nombre.localeCompare(b.nombre)
             );
             setOrder(sortedDigimon);
-        }   
+        }   else {
+            setOrder([]); 
+        }
     }, [products]);
 
      if (loader) return <>
@@ -89,13 +87,15 @@ const Selector = ({ products = [], loader, error, digimon, setDigimon, type, set
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu align="end" className='custom-option'>
-                            { !especial ? (
-                                <SelectorItem 
-                                digimon={order}
-                                onSelect={onSelect}
-                                />
+                            { especial ? (
+                                <SelectorItem digimon={especial} onSelect={onSelect}/>
+                            ) : order.length > 0 ? (
+                                <SelectorItem digimon={order} onSelect={onSelect} />
                             ) : (
-                                <SelectorItem digimon={especial} onSelect={onSelect}/>)}
+                                <Dropdown.Item style={{height: '250px', alignItems: 'center', justifyContent: 'center', display: 'flex', textDecoration: 'none', color: 'var(--primary-text-color)'}}>
+                                    <span>El digimon no tiene evoluciones</span>
+                                </Dropdown.Item>
+                            )}
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>

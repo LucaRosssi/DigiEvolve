@@ -1,158 +1,73 @@
-import React from 'react'
+import HelpTooltip from './HelpTooltip';
+import Stat from './Stat'
 
-const Requisitos = ({digimon}) => {
-    const renderBatallas = (batallas) => {
-        if (!batallas) return "-";
-        if (batallas[0] === 0) return `< ${batallas[1]}`;
-        if (batallas[1] === 1000) return `> ${batallas[0]}`;
-        return `${batallas[0]} - ${batallas[1]}`;
-    };
+const Requisitos = ({ digimon }) => {
+  const renderBatallas = (batallas) => {
+    if (!batallas) return "-";
+    if (batallas[0] === 0) return `< ${batallas[1]}`;
+    if (batallas[1] === 1000) return `> ${batallas[0]}`;
+    return `${batallas[0]} - ${batallas[1]}`;
+  };
+
+  const renderErrores = (errores) => {
+    if (errores === null || errores === undefined) return "-";
+    if (errores[1] === 100) return `> ${errores[0]}`;
+    if (errores[0] === 0) return `< ${errores[1]}`;
+    return `${errores[0]} - ${errores[1]}`;
+  };
+
+  // Stats simples: mismo patrón de renderizado (número o '-')
+  const statsBasicos = [
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/hp_bd3c6w.png', label: 'Vida', value: digimon.vida },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/mp_jblqox.png', label: 'MP', value: digimon.mp },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209212/offense_xnbgwm.png', label: 'Fuerza', value: digimon.fuerza },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/defense_ebohzv.png', label: 'Defensa', value: digimon.defensa },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209212/speed_nnrunm.png', label: 'Velocidad', value: digimon.velocidad },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/brains_c2rxlz.png', label: 'Inteligencia', value: digimon.inteligencia },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/care_hbijk8.png', label: 'Erores de Crianza', value: renderErrores(digimon.errores) },
+    {
+      icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/weight_et2v4p.png',
+      label: 'Peso',
+      value: digimon.peso ? `${digimon.peso[0]} - ${digimon.peso[1]}` : null
+    },
+  ];
+
+  const statsEspeciales = [
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/happiness_kbldpa.png', label: 'Felicidad', value: digimon.felicidad, cara: true },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/discipline_z5jxgt.png', label: 'Disciplina', value: digimon.disciplina, cara: true },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/battle_wnzdg0.png', label: 'Batallas', value: renderBatallas(digimon.batallas) },
+    { icon: 'https://res.cloudinary.com/hqw4axe3/image/upload/v1783209211/techniques_kxlsdm.png', label: 'Técnicas Aprendidas', value: digimon.tecnicas },
+  ];
+
   return (
-    <>  
-        <h2>Requisitos</h2>
-            <div className="digimon-requisitos">
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/hp.png" title='Vida' alt="Vida" />
-                    <span>
-                      { digimon.vida !== null ? (
-                        `${digimon.vida}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/mp.png" title='MP' alt="MP" />
-                    <span>
-                      { digimon.mp !== null ? (
-                        `${digimon.mp}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/offense.png" title='Fuerza' alt="Fuerza" />
-                    <span>
-                      { digimon.fuerza !== null ? (
-                        `${digimon.fuerza}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/defense.png" title='Defensa' alt="Defensa" />
-                    <span>
-                      { digimon.defensa !== null ? (
-                        `${digimon.defensa}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/speed.png" title='Velocidad' alt="Velocidad" />
-                    <span>
-                      { digimon.velocidad !== null ? (
-                        `${digimon.velocidad}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/brains.png" title='Inteligencia' alt="Inteligencia" />
-                    <span>
-                      { digimon.inteligencia !== null ? (
-                        `${digimon.inteligencia}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/care.png" title='Erores de Crianza' alt="Erores" />
-                    <span>
-                      { digimon.errores === null ? (
-                          "-"
-                        ) : digimon.errores[1] === 100 ? (
-                          `> ${digimon.errores[0]}`
-                        ) : digimon.errores[0] === 0 ? (
-                          `< ${digimon.errores[1]}`
-                        ) : (
-                          `${digimon.errores[0]} - ${digimon.errores[1]}`
-                        )
-                      }
-                      </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/weight.png" title='Peso' alt="Peso" />
-                    <span>
-                      { digimon.peso !== null ? (
-                        `${digimon.peso[0]} - ${digimon.peso[1]}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
+    <>
+      <h2>
+        Requisitos
+        <HelpTooltip/>  
+      </h2>
+      <div className="digimon-requisitos">
+        {statsBasicos.map((stat) => (
+          <Stat key={stat.label} icon={stat.icon} label={stat.label} value={stat.value} />
+        ))}
+      </div>
+
+      <div className="requisitos2">
+        <h2>Requisitos Especiales</h2>
+        <div className="digimon-requisitos especiales">
+          {statsEspeciales.map((stat) => (
+            <div key={stat.label} className={`stat ${stat.cara ? 'cara' : ''}`}>
+              <img src={stat.icon} title={stat.label} alt={stat.label} />
+              <span>{stat.value ?? '-'}</span>
             </div>
-        <div className="requisitos2">
-            <h2>Requisitos Especiales</h2>
-            <div className="digimon-requisitos especiales">
-                <div className='stat cara'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/happiness.png" title='Felicidad' alt="Felicidad" />
-                    <span>
-                      { digimon.felicidad !== null ? (
-                        `${digimon.felicidad}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-                <div className='stat cara'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/discipline.png" title='Disciplina' alt="Disciplina" />
-                    <span>
-                      { digimon.disciplina !== null ? (
-                        `${digimon.disciplina}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/battle.png" title='Batallas' alt="Batallas" />
-                    <span>
-                      {renderBatallas(digimon.batallas)}
-                    </span>
-                </div>
-                <div className='stat'>
-                    <img src="https://phoenix-staffel.de/digimon/DigimonWorld/imgs/techniques.png" title='Técnicas Aprendidas' alt="Técnicas" />
-                    <span>
-                      { digimon.tecnicas !== null ? (
-                        `${digimon.tecnicas}`
-                      ) : (
-                        '-'
-                      )
-                      }
-                    </span>
-                </div>
-            </div>
-            { digimon.especial && (
-              <div className='especial'> 
-                <p >{digimon.especial}</p>
-              </div>
-            )}
+          ))}
         </div>
+
+        {digimon.especial && (
+          <div className='especial'>
+            <p>{digimon.especial}</p>
+          </div>
+        )}
+      </div>
     </>
   )
 }
