@@ -12,10 +12,6 @@ const Requisitos = ({ digimon }) => {
     ? (digimon.especial[currentLang] ?? digimon.especial.en)
     : digimon.especial;
 
-  useEffect(() => {
-    console.log('Idioma actual:', currentLang);
-  }, [i18n.language]);
-
   const renderBatallas = (batallas) => {
     if (!batallas) return "-";
     if (batallas[0] === 0) return `< ${batallas[1]}`;
