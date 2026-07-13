@@ -5,7 +5,6 @@ const AppRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/:digimonName" element={<Home />} />
     </Routes>
   )
 }
