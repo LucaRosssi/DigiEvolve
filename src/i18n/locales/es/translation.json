@@ -1,0 +1,39 @@
+{
+  "requisitos": {
+    "title": "Requisitos",
+    "specialTitle": "Requisitos Especiales",
+    "stats": {
+      "life": "Vida",
+      "mp": "MP",
+      "strength": "Fuerza",
+      "defense": "Defensa",
+      "speed": "Velocidad",
+      "intelligence": "Inteligencia",
+      "careMistakes": "Errores de Crianza",
+      "weight": "Peso",
+      "happiness": "Felicidad",
+      "discipline": "Disciplina",
+      "battles": "Batallas",
+      "techniques": "Técnicas Aprendidas"
+    }
+  },
+  "selector": {
+      "selectorTitle1": "Digimon Inicial",
+      "selectorTitle2": "Digimon Deseado",
+      "placeholder": "Elige un Digimon",
+      "noEvolutions": "El digimon no tiene evoluciones"
+  },
+  "info": {
+    "infoTitle": "Bienvenido a DigiEvolve!!",
+    "infoText": "Seleccioná el Digimon que tenés actualmente para ver los requisitos de sus evoluciones",
+    "evolutionBtn": "Ver Línea Evolutiva",
+    "requirementsBtn": "Ver Requisitos"
+  },
+  "evoluciones": {
+    "title": "Línea Evolutiva",
+    "evolutions": "Evoluciones"
+  },
+  "helpToolTip": {
+    "text": "Para evolucionar al Digimon, tenés que cumplir 3 de los 4 requisitos. Estos son Stats (Vida, MP, Fuerza, Defensa, Velocudad, Inteligencia), Errores de Crianza y Peso. Por otro lado, están los requisitos especiales (peleas, disciplina, felicidad y tecnicas aprendidas); no es necesario cumplir con todos los requisitos especiales, con uno alcanza, al contrario de Stats que debés alcanzar todos los requisitos mínimos para que cuente. Para los Digimon más avanzados, es conveniente ignorar los Stats y centrarse en la crianza, el peso y los requisitos especiales."
+  }
+}

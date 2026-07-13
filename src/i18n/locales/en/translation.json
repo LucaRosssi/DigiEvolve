@@ -1,0 +1,39 @@
+{
+  "requisitos": {
+    "title": "Requirements",
+    "specialTitle": "Special Requirements",
+    "stats": {
+      "life": "Life",
+      "mp": "MP",
+      "strength": "Strength",
+      "defense": "Defense",
+      "speed": "Speed",
+      "intelligence": "Intelligence",
+      "careMistakes": "Care Mistakes",
+      "weight": "Weight",
+      "happiness": "Happiness",
+      "discipline": "Discipline",
+      "battles": "Battles",
+      "techniques": "Learned Techniques"
+    }
+  },
+  "selector": {
+      "selectorTitle1": "Digimon Starter",
+      "selectorTitle2": "Digimon Wanted",
+      "placeholder": "Select a Digimon",
+      "noEvolutions": "The digimon has no evolutions"
+  },
+  "info": {
+    "infoTitle": "Welcome to DigiEvolve!!",
+    "infoText": "Select the Digimon you currently have to view the requirements for their evolutions",
+    "evolutionBtn": "See Evolution Line",
+    "requirementsBtn": "See Requirements"
+  },
+  "evoluciones": {
+    "title": "Evolution Line",
+    "evolutions": "Evolutions"
+  },
+  "helpToolTip": {
+    "text": "To evolve your Digimon, you need to meet 3 of the 4 requirements. These are Stats (Life, MP, Strength, Defense, Speed, Intelligence), Care Mistakes, and Weight. On the other hand, there are the special requirements (battles, discipline, happiness, and learned techniques); it isn't necessary to meet all the special requirements, one is enough — unlike Stats, where you must reach all the minimum requirements for it to count. For more advanced Digimon, it's best to ignore Stats and focus on care mistakes, weight, and the special requirements."
+  }
+}

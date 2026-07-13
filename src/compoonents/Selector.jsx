@@ -4,11 +4,15 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import "../css/selector.css"
 import SelectorItem from './SelectorItem';
 import Skeleton from './Skeleton';
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 
 const Selector = ({ products = [], loader, error, digimon, setDigimon, type, clear, text, especial }) => {
     const [open, setOpen] = useState(false);
     const [order, setOrder] = useState([]);
+    const { t } = useTranslation();
+    
 
     // Ordenar los productos por nombre cuando se actualiza la lista de productos
     useEffect(() => {
@@ -38,7 +42,7 @@ const Selector = ({ products = [], loader, error, digimon, setDigimon, type, cle
                                                         <p className='digimon-text'>{digimon.nombre}</p>
                                                     </>
                                                     ) : (
-                                                    "Elige un Digimon"
+                                                    t('selector.placeholder')
                                                     )}
                                                 </span>
                                                 <IoIosArrowDropdown className={`rotate ${open ? 'active' : ''}`}/>
@@ -80,7 +84,7 @@ const Selector = ({ products = [], loader, error, digimon, setDigimon, type, cle
                                     <p className='digimon-text'>{digimon.nombre}</p>
                                 </>
                                 ) : (
-                                "Elige un Digimon"
+                                t('selector.placeholder')
                                 )}
                             </span>
                             <IoIosArrowDropdown className={`rotate ${open ? 'active' : ''}`}/>
@@ -93,7 +97,7 @@ const Selector = ({ products = [], loader, error, digimon, setDigimon, type, cle
                                 <SelectorItem digimon={order} onSelect={onSelect} />
                             ) : (
                                 <Dropdown.Item style={{height: '250px', alignItems: 'center', justifyContent: 'center', display: 'flex', textDecoration: 'none', color: 'var(--primary-text-color)'}}>
-                                    <span>El digimon no tiene evoluciones</span>
+                                    <span>{t('selector.noEvolutions')}</span>
                                 </Dropdown.Item>
                             )}
                         </Dropdown.Menu>

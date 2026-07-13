@@ -1,9 +1,12 @@
 import React, { useMemo } from 'react'
 import Selector from './Selector'
 import { useDigimon } from '../context/DigimonContext'
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 const SelectorContainer = () => {
-  const { products, productsLoading, error, selectedDigimon, setSelectedDigimon, selectedDigimon2, setSelectedDigimon2, evolucion } = useDigimon()
+  const { products, productsLoading, error, selectedDigimon, setSelectedDigimon, selectedDigimon2, setSelectedDigimon2, evolucion } = useDigimon();
+  const { t } = useTranslation();
 
   const selectedEvolution = useMemo(() => {
     if (!selectedDigimon?.nombre || evolucion.length === 0) return [];
@@ -57,7 +60,7 @@ const SelectorContainer = () => {
         setDigimon={setSelectedDigimon}
         type="selector1"
         clear={clearSelector2}
-        text={'Digimon Inicial'}
+        text={t('selector.selectorTitle1')}
       />
 
       {/* Selector 2: evoluciones filtradas */}
@@ -68,7 +71,7 @@ const SelectorContainer = () => {
         digimon={selectedDigimon2}
         setDigimon={setSelectedDigimon2}
         type="selector2"
-        text={'Digimon Deseado'}
+        text={t('selector.selectorTitle2')}
       />
     </div>
   )

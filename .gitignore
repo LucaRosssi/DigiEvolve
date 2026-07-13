@@ -25,4 +25,4 @@ dist-ssr
 .env
 
 # Script de seed de Firestore, no debe versionarse
-src/service/Database.jsx
+src/sevice/Database.jsx

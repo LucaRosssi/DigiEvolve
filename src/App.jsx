@@ -1,18 +1,19 @@
 import './App.css'
-import Body from './compoonents/BodyContainer'
-import Title from './compoonents/Title'
 import { DigimonProvider } from './context/DigimonContext'
+import { BrowserRouter } from "react-router";
+import AppRoute from './compoonents/AppRoute';
 // import Databse from './sevice/Databse'
 
 function App() {
 
   return (
     <>
+    <BrowserRouter>
     <DigimonProvider>
-      <Title/>
-      <Body/>
+      <AppRoute/>
       {/* <Databse/> */}
     </DigimonProvider>
+    </BrowserRouter>
     </>
   )
 }

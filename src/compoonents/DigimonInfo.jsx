@@ -5,12 +5,15 @@ import '../css/skeleton.css'
 import Requisitos from './Requisitos';
 import SkeletonImage from './SkeletonImage';
 import SkeletonIcon from './SkeletonIcon';
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 const Evoluciones = lazy(()=> import('./Evoluciones'));
 
 const DigimonInfo = ({digimon, loader}) => {
   
   const [ view, setView ] = useState(true);
+  const { t } = useTranslation();
 
 
   const changeView = () => {
@@ -61,10 +64,10 @@ const DigimonInfo = ({digimon, loader}) => {
               <div className="linea-evolutiva">
                 { view === true ? 
                   <button id="openModal" className="evolve-btn" onClick={()=>changeView()}>
-                    Ver Línea Evolutiva
+                    {t('info.evolutionBtn')}
                   </button> : (
                   <button id="openModal" className="evolve-btn" onClick={()=>changeView()}>
-                    Ver Requisitos
+                    {t('info.requirementsBtn')}
                   </button>
                 )}
               </div>

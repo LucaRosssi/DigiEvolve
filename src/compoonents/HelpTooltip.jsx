@@ -1,16 +1,14 @@
 import { OverlayTrigger, Popover } from "react-bootstrap"
 import { HiQuestionMarkCircle } from "react-icons/hi"
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 const HelpTooltip = () => {
+  const { t } = useTranslation();
   const popover = (
     <Popover id="help-popover">
       <Popover.Body style={{ fontSize: '0.9em', width: '250px', backgroundColor: '#ede7c8', color: '#212529', padding: '10px', borderRadius: '5px' }}>
-        Para evolucionar al Digimon, tenés que cumplir 3 de los 4 requisitos. Estos son 
-        Stats (Vida, MP, Fuerza, Defensa, Velocidad, Inteligencia), Errores de Crianza y Peso. Por otro
-        lado, están los requisitos especiales (peleas, disciplina, felicidad y tecnicas aprendidas); no es
-        necesario cumplir con todos los requisitos especiales, con uno alcanza, al contrario de Stats
-        que debés alcanzar todos los requisitos mínimos para que cuente. Para los Digimon más avanzados, es
-        conveniente ignorar los Stats y centrarse en la crianza, el peso y los requisitos especiales.
+        <p>{t('helpToolTip.text')}</p>
       </Popover.Body>
     </Popover>
   )

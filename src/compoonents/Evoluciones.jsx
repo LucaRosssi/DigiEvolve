@@ -1,9 +1,12 @@
 import { useMemo } from "react";
 import "../css/evoluciones.css"
 import { useDigimon } from "../context/DigimonContext";
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 const Evoluciones = ({digimon}) => {
   const { setSelectedDigimon2, products, evolucion, setSelectedDigimon } = useDigimon();
+  const { t } = useTranslation();
 
 
     const lineaEvolutiva = useMemo(() => {
@@ -25,10 +28,10 @@ const Evoluciones = ({digimon}) => {
     
   return (
     <>
-        <h2>Linea Evolutiva</h2>
+        <h2>{t('evoluciones.title')}</h2>
         <div className="evolve-container">
           <div>
-            <h3 style={{textAlign: 'center'}}>Pre-Evoluciones</h3>
+            <h3 style={{textAlign: 'center'}}>Pre-evo</h3>
             <div className="evolve-third-line evolve-column">
               {
                 preEvoluciones.map((evo) => (
@@ -58,7 +61,7 @@ const Evoluciones = ({digimon}) => {
             </div>
           </div>
           <div>
-            <h3>Evoluciones</h3>
+            <h3>{t('evoluciones.evolutions')}</h3>
             <div className="evolve-third-line evolve-column">
               {
                 lineaEvolutiva.map((evo) => (
